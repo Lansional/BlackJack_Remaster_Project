@@ -1,8 +1,12 @@
 # Black Jack
 
 ```
-자바로 만든 프로젝트
+
+	Java Project
+
 ```
 
-ide: eclipse
+Welcome to Lansional GitHub page!
+
+ide: eclipse <br>
 JDK: JDK1.8
