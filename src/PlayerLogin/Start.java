@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Start {
 	private Scanner scan = new Scanner(System.in);
 	private Login login;
-	private RegisterIO registerIO;
+	private Register registerIO;
 	
 	public Start() {
 		ShowMenu();
@@ -17,7 +17,7 @@ public class Start {
 			login = new Login();
 			return;
 		} else if (t == 2) {
-			registerIO = new RegisterIO();
+			registerIO = new Register();
 			return;
 		} else {
 			System.out.println("다시 입력하세요! ");
