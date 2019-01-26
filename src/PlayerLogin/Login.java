@@ -1,20 +1,30 @@
 package PlayerLogin;
 
 import java.io.Console;
+import java.io.DataInputStream;
+import java.io.FileInputStream;
 
-public class Login implements Login_and_Register { // Cloneable {
+public class Login implements Login_and_Register {
 	private Console console = System.console();
-	protected String userName;		// 유저이름입력
-	protected char[] pW;		// 비밀번호입력
-	protected String passWord;		// pW를 String으로 전환
+	private String userName;		// 유저이름입력
+	private String passWord;		// pW를 String으로 전환
 	
 	public Login() {
 		System.out.print("UserName: ");
-		inputUserName(console.readLine());
+		setUserName(console.readLine());
 		System.out.print("PassWord: ");
-		inputPassWord(console.readPassword());
-		ioCheck<Login> login = new ioCheck<Login>(this);
+		setPassWord(console.readPassword());
 	}
+	
+//	public void findInformation() {
+//		DataInputStream dataInputStream = null;
+//		try {
+//			dataInputStream = new DataInputStream(new FileInputStream(informationFile + userName + ".dat"));
+//			while (true) {
+//				
+//			}
+//		}
+//	}
 	
 	@Override
 	public String getId() {
@@ -27,7 +37,7 @@ public class Login implements Login_and_Register { // Cloneable {
 	}
 	
 	@Override
-	public void inputUserName(String str) {
+	public void setUserName(String str) {
 		if (str == null) {
 			System.err.println("입력값이 없습니다.");
 			new Login();
@@ -37,26 +47,12 @@ public class Login implements Login_and_Register { // Cloneable {
 	}
 
 	@Override
-	public void inputPassWord(char[] passWord) {
+	public void setPassWord(char[] passWord) {
 		if (passWord.length == 0) {
 			System.err.println("입력값이 없습니다.");			
 			new Login();
 			return;
 		}
-		pW = passWord;
 		this.passWord = String.valueOf(passWord);
 	}
-	
-//	public Login deepClone() {		// 강한 복사
-//		Object obj = null;
-//		
-//		try {
-//			obj = super.clone();
-//		} catch (CloneNotSupportedException e) {
-//			e.printStackTrace();
-//		}
-//		
-//		Login login = (Login) obj;
-//		return login;
-//	}
 }

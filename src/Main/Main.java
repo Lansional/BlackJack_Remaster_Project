@@ -1,13 +1,11 @@
 package Main;
 
-import PlayerLogin.*;
+import PlayerLogin.Start;
 
-public class Main {		// 메인 프로젝트
+public class Main {		// 메인
 
 	public static void main(String[] args) {
-		
-		Start start = new Start();
-		
+		new Start();
 	}
 
 }
