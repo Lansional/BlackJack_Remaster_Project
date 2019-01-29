@@ -11,21 +11,24 @@ public class Register implements Login_and_Register {
 	private String passWord;		// 비밀번호 입력
 	private static int soMoreWrong;
 	
-	public Register() {			// 미완성
+	public Register() {
 		System.out.print("UserName: ");
 		setUserName(console.readLine());
 		inputPassWord();
 		inputInformation();
+		System.out.println("Please Login!!");
 		new Login();
 	}
 	
 	public void inputInformation() {
 		DataOutputStream dataOutputStream = null;
 		try {
+//			byte[] arr = passWord.getBytes();
 			dataOutputStream = new DataOutputStream(new FileOutputStream(informationFile + id + ".dat"));
+//			dataOutputStream.write(arr);
 			dataOutputStream.writeBytes(passWord);
 		} catch (IOException e) {
-			System.out.println("Input Error!");
+			System.err.println("Information Error!");
 		} finally {
 			try {
 				dataOutputStream.close();
