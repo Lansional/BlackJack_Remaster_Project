@@ -22,11 +22,13 @@ public class Register implements Login_and_Register {
 	
 	public void inputInformation() {
 		DataOutputStream dataOutputStream = null;
+		
+		byte[] arr = new byte[id.length()];
+		arr = passWord.getBytes();
+		
 		try {
-//			byte[] arr = passWord.getBytes();
 			dataOutputStream = new DataOutputStream(new FileOutputStream(informationFile + id + ".dat"));
-//			dataOutputStream.write(arr);
-			dataOutputStream.writeBytes(passWord);
+			dataOutputStream.write(arr);
 		} catch (IOException e) {
 			System.err.println("Information Error!");
 		} finally {

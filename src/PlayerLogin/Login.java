@@ -30,14 +30,18 @@ public class Login implements Login_and_Register {
 				int num = dataInputStream.read(arr);
 				if (num < 0)
 					break;
-//				for (int i = 0; i < passWord.length; i++) {
-//					if ((int)passWord[i] != num) {
-//						System.err.println("Incorrect password.");
-//						wrongNumber++;
-//						new Login();
-//					}
-//				}
 			}
+			String str = String.valueOf(arr);
+			
+			if (!ckechThePassWord(str)) {
+				System.out.println("Wrong PassWord");
+				if (wrongNumber >= 3) {
+					System.out.println("Sorry! You have exceeded the number of input errors.");
+					System.exit(0);
+				}
+				new Login();
+			}
+			System.out.println("Login Success");
 		} catch (FileNotFoundException fnfe) {
 			System.err.println("Not UserName!");
 		} catch (EOFException e) {
@@ -49,6 +53,13 @@ public class Login implements Login_and_Register {
 			} catch (Exception e) {
 			}
 		}
+	}
+	
+	public boolean ckechThePassWord(String str) {
+		if (str.equals(passWord)) {
+			return true;
+		}
+		return false;
 	}
 	
 	@Override
