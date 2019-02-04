@@ -31,7 +31,7 @@ public class Login implements Login_and_Register {
 				if (num < 0)
 					break;
 			}
-			String str = String.valueOf(arr);
+			String str = new String(arr);
 			
 			if (!ckechThePassWord(str)) {
 				System.out.println("Wrong PassWord");
