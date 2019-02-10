@@ -18,7 +18,7 @@ public class Start {
 			new Register();
 			return;
 		} else {
-			System.out.println("다시 입력하세요! ");
+			System.out.println("Please re-enter! ");
 			this.Input(scan.nextInt());
 		}
 	}

@@ -8,10 +8,9 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class Login implements Login_and_Register {
-	private Console console = System.console();
 	private String userName;		// 유저이름입력
 	private String passWord;		// pW를 String으로 전환
-	private static int wrongNumber;
+	private Console console = System.console();
 	
 	public Login() {
 		System.out.print("UserName: ");
@@ -25,23 +24,11 @@ public class Login implements Login_and_Register {
 		DataInputStream dataInputStream = null;
 		try {
 			dataInputStream = new DataInputStream(new FileInputStream(informationFile + userName + ".dat"));
-			byte[] arr = new byte[100];
-			while (true) {
-				int num = dataInputStream.read(arr);
-				if (num < 0)
-					break;
-			}
-			String str = new String(arr);
-			
-			if (!ckechThePassWord(str)) {
+			String str = dataInputStream.readUTF();
+			if (!ckeckThePassWord(str)) {
 				System.out.println("Wrong PassWord");
-				if (wrongNumber >= 3) {
-					System.out.println("Sorry! You have exceeded the number of input errors.");
-					System.exit(0);
-				}
 				new Login();
 			}
-			System.out.println("Login Success");
 		} catch (FileNotFoundException fnfe) {
 			System.err.println("Not UserName!");
 		} catch (EOFException e) {
@@ -55,8 +42,8 @@ public class Login implements Login_and_Register {
 		}
 	}
 	
-	public boolean ckechThePassWord(String str) {
-		if (str.equals(passWord)) {
+	public boolean ckeckThePassWord(String str) {
+		if (passWord.equals(str)) {
 			return true;
 		}
 		return false;

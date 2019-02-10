@@ -4,10 +4,11 @@ import java.io.Console;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class Register implements Login_and_Register {
-	private Console console = System.console();
 	private String id = null;		// 아이디입력
+	private Console console = System.console();
 	private String passWord;		// 비밀번호 입력
 	private static int soMoreWrong;
 	
@@ -22,13 +23,11 @@ public class Register implements Login_and_Register {
 	
 	public void inputInformation() {
 		DataOutputStream dataOutputStream = null;
-		
-		byte[] arr = new byte[id.length()];
-		arr = passWord.getBytes();
+//		byte[] arr = new byte[100];
 		
 		try {
 			dataOutputStream = new DataOutputStream(new FileOutputStream(informationFile + id + ".dat"));
-			dataOutputStream.write(arr);
+			dataOutputStream.writeUTF(passWord);
 		} catch (IOException e) {
 			System.err.println("Information Error!");
 		} finally {
@@ -48,7 +47,7 @@ public class Register implements Login_and_Register {
 		} else {
 			soMoreWrong++;
 			System.err.println("Not Same PassWord input!");
-			this.inputPassWord();
+			inputPassWord();
 			if (soMoreWrong >= 3) {
 				System.out.println("Sorry! Please try again");
 				System.exit(0);
@@ -57,7 +56,7 @@ public class Register implements Login_and_Register {
 	}
 	
 	public boolean equalsPassword(char[] pW) {
-		if (passWord.equals(String.valueOf(pW))) {
+		if (Arrays.equals(passWord.toCharArray(), pW)) {
 			return true;
 		} else {
 			return false;
@@ -70,7 +69,7 @@ public class Register implements Login_and_Register {
 	}
 	
 	@Override
-	public void setUserName(String id) {
+	public void setUserName(String id) {			// Setter: UserName
 		if (id == null) {
 			System.err.println("입력값이 없습니다.");
 			new Login();
@@ -80,12 +79,12 @@ public class Register implements Login_and_Register {
 	}
 
 	@Override
-	public void setPassWord(char[] pW) {
-		this.passWord = String.valueOf(pW);
+	public void setPassWord(char[] passWord) {			// Setter: PassWord
+		this.passWord = String.valueOf(passWord);
 	}
 
 	@Override
 	public String getPw() {
-		return null;
+		return passWord;
 	}
 }

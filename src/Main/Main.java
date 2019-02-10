@@ -6,6 +6,7 @@ public class Main {		// ∏ﬁ¿Œ
 
 	public static void main(String[] args) {
 		new Start();
+		System.out.println("Login Success");
 	}
 
 }
