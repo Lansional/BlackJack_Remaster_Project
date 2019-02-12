@@ -1,14 +1,27 @@
 package Game.SinglePlayer.Player;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 import Game.SinglePlayer.SuperClass;
 
 public class SinglePlay implements SuperClass {			// 싱글플레이
-	private Object[] Card = { 'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K' };			// 포커 카드
+	private ArrayList<Object> playerCard;
+	private Random rand;
 	
-	
+	public SinglePlay() {
+		playerCard = new ArrayList<Object>();
+		rand = new Random(Card.length);
+		
+		moreOneCard();
+	}
 	
 	@Override
-	public Object[] getCard() {
-		return Card;
+	public ArrayList<Object> getCard() {
+		return playerCard;
+	}
+	
+	public void moreOneCard() {
+		playerCard.add(Card[rand.nextInt()]);
 	}
 }
