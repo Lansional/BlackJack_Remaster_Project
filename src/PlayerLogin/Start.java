@@ -26,6 +26,7 @@ public class Start {
 	private void ShowMenu() {
 		System.out.println("1. Login");
 		System.out.println("2. Register");
+		System.out.println("(1 or 2)");
 		System.out.print(">> ");
 	}
 }

@@ -1,9 +1,7 @@
 # Black Jack
 
 ```
-
 	Java Project
-
 ```
 
 Welcome to Lansional GitHub page!
@@ -11,6 +9,18 @@ Welcome to Lansional GitHub page!
 ide: eclipse <br>
 JDK: JDK1.8
 
-# Progress
+## 실행방법
+``` Bash
+	java Main.Main
+```
 
-19/2/10 done [PlayerLogin]:(https://github.com/Lansional/BlackJack_Remaster_Project/tree/Lansional/src/PlayerLogin)
+## 곧 넣을 기능들
+```
+	1. 싱글플레이 (봇)
+	2. 멀티플레이 (tcp/ip 서버, 로그인 기능을 서버)
+	3. 서버 데이터베이스 연결 (mysql 예상)
+```
+
+## 진도
+
+* > 19/2/10 done [PlayerLogin](https://github.com/Lansional/BlackJack_Remaster_Project/tree/Lansional/src/PlayerLogin/)
