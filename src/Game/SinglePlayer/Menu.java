@@ -1,6 +1,9 @@
 package Game.SinglePlayer;
 
+import java.util.Scanner;
+
 public class Menu {
+	private Scanner scan = new Scanner(System.in);
 	
 	public Menu() {
 		usaClear();
@@ -33,10 +36,14 @@ public class Menu {
 		System.out.println("@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%%%%%%%@@@@@@%:    ...::..     .#+***###%%%@@@@@@%%%%%###################%%%%%%%%@@@@@@@@@@@@");
 		System.out.println("@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%################%%@@@@@@@%%%@@@@@@@%%########################################%%%%%%%@@@@@@@@@@@@");
 		System.out.println("@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%#############################################################################%%%%%%%%@@@@@@@@@@@");
+		System.out.println(">> ");
+		choose(scan.nextInt());
 	}
 	
 	public void choose(int i) {			// 선택하기
-		System.out.println("");
+		if (i == 1) {
+			
+		}
 	}
 	
 	public void usaClear() {			// 유사 "Clear" 명령어
