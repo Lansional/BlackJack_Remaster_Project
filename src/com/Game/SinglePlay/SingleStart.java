@@ -17,6 +17,7 @@ public class SingleStart {
 	
 	public void run() {
 		player.start();
+		player.setDaemon(true);
 //		bot.start();
 		
 		try {

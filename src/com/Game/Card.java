@@ -8,4 +8,5 @@ public interface Card {			// 사용자와 봇의 상속 인터페이스
 	public int getCardSize();		// 카드 수량
 	public boolean outSum();		// 카드 숫자 초과 확인
 	public void startGetCard();		// 시작 카드
+	public void setSum();			// 합을 매 한턴씩 저장 (setDaemon())
 }
