@@ -2,18 +2,16 @@ package com.Game;
 
 import java.util.Scanner;
 
-import com.Game.MultiPlay.MultiPlayStart;
+//import com.Game.MultiPlay.MultiPlayStart;
 import com.Game.SinglePlay.SingleStart;
 
 public class Menu {
 	private Scanner scan;
 	private SingleStart singleStart;
-	private MultiPlayStart multiPlayStart;
+//	private MultiPlayStart multiPlayStart;
 	
 	public Menu() {
 		scan = new Scanner(System.in);
-		singleStart = new SingleStart();
-		usaClear();
 		menu();
 	}
 	
@@ -37,7 +35,8 @@ public class Menu {
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@                                               =@%%###%%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@");
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%@@#               1. SinglePlay.                    .@%##########%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@");
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@%@%%%%@@++++====::::::...                                    %%#############%%%%%%%%%%@@@@@@@@@@@@@@@@@");
-		System.out.println("@@@@@@@@@@@@@@@@@@@@%%%%%%%@@#++====            2. Multiplay                         #@##############%%%%%%%%%%@@@@@@@@@@@@@@@");
+//		System.out.println("@@@@@@@@@@@@@@@@@@@@%%%%%%%@@#++====            2. Multiplay                         #@##############%%%%%%%%%%@@@@@@@@@@@@@@@");
+		System.out.println("@@@@@@@@@@@@@@@@@@@@%%%%%%%@@#++====            2. Multiplay (Comming soon)          #@##############%%%%%%%%%%@@@@@@@@@@@@@@@");
 		System.out.println("@@@@@@@@@@@@@@@@@@%%%%%%%%%@#                                                         =@###############%%%%%%%%%@@@@@@@@@@@@@@");
 		System.out.println("@@@@@@@@@@@@@@@%%%%%%%%%%%%%@@                  3. exit                          ...:=+@%###############%%%%%%%%%@@@@@@@@@@@@@");
 		System.out.println("@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%%%%%%%@@@@@@%:    ...::..     .#+***###%%%@@@@@@%%%%%###################%%%%%%%%@@@@@@@@@@@@");
@@ -50,9 +49,10 @@ public class Menu {
 	public void choose(int i) {			// 선택하기
 		usaClear();
 		if (i == 1) {
-			singleStart.run();
+			singleStart = new SingleStart();
 		} else if (i == 2) {
-			multiPlayStart = new MultiPlayStart();
+			System.out.println("coming soon...");
+//			multiPlayStart = new MultiPlayStart();
 		} else {
 			System.out.println("exit");
 			System.exit(0);
@@ -60,7 +60,7 @@ public class Menu {
 	}
 	
 	public void usaClear() {			// 유사 "Clear" 명령어
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 25; i++) {
 			System.out.println();
 		}
 	}

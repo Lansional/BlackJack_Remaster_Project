@@ -3,25 +3,20 @@ package com.Game.SinglePlay.Player;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.Random;
 import java.util.Scanner;
-import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 import com.Game.Card;
 
 public class Player extends Thread implements Card {			// ΩÃ±€«√∑π¿Ã
 	private List<String> playerCard;
-	private Random rand;
-	private int sum;
+	private static int sum;
 	private Scanner scan = new Scanner(System.in);
 	
 	public Player() {
-		sum = 0;
+		super("Play");
 		playerCard = new ArrayList<String>();
-		rand = new Random(Card.length);
+		
 		startGetCard();
 	}
 	
@@ -29,12 +24,16 @@ public class Player extends Thread implements Card {			// ΩÃ±€«√∑π¿Ã
 	public void run() {
 		while (outSum()) {
 			System.out.println("Your Card: " + playerCard + " sum : " + getSum());
-			if (input() == 1) {
+			
+			int num = input();
+			
+			if (num == 1) {
 				moreOneCard();
-			} else if (input() == 2) {
+			} else if (num == 2) {
 				yield();
+			} else {
+				System.out.println("Please Input Again!");				
 			}
-			System.out.println("Please Input Again!");
 			setSum();
 		}
 	}
@@ -91,6 +90,6 @@ public class Player extends Thread implements Card {			// ΩÃ±€«√∑π¿Ã
 	
 	@Override
 	public void moreOneCard() {
-		playerCard.add(Card[rand.nextInt()]);
+		playerCard.add(Card[(int)(Math.random() * (CARD_LENG - 1)) + 1]);
 	}
 }
