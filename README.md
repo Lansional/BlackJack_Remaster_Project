@@ -11,7 +11,7 @@ JDK: JDK1.8
 
 ## 실행방법
 ``` Bash
-	java Main.Main
+	java com.Main.Main
 ```
 
 ## 곧 넣을 기능들

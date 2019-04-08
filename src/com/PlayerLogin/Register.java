@@ -1,18 +1,14 @@
 package com.PlayerLogin;
 
 import java.io.Console;
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.Socket;
 import java.util.Arrays;
 
 public class Register implements Login_and_Register {
-	private String id = null;		// 아이디입력
 	private Console console = System.console();
-	private String passWord;		// 비밀번호 입력
+	private String id, passWord;
 	private static int soMoreWrong;
 	
 	public Register() {
@@ -33,7 +29,14 @@ public class Register implements Login_and_Register {
 			DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
 			
 			outputStream.writeUTF(id);
-			outputStream.writeUTF(id);
+			
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException ie) {
+				ie.printStackTrace();
+			}
+			
+			outputStream.writeUTF(passWord);
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
