@@ -1,6 +1,12 @@
 package com.PlayerLogin;
 
 import java.io.Console;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.Socket;
 import java.util.Arrays;
 
 public class Register implements Login_and_Register {
@@ -19,7 +25,18 @@ public class Register implements Login_and_Register {
 	}
 	
 	public void inputInformation() {			// tcp/ip 서버로 비번과 아이디 보내기
+		Socket socket = null;
 		
+		try {
+			socket = new Socket("192.168.0.101", 1720);
+			
+			DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
+			
+			outputStream.writeUTF(id);
+			outputStream.writeUTF(id);
+		} catch (IOException ioe) {
+			ioe.printStackTrace();
+		}
 	}
 	
 	public void inputPassWord() {

@@ -9,19 +9,19 @@ public class SingleStart {
 	public SingleStart() {
 		someInformation();
 		player = new Player();
-		
 		readyStart();
 	}
 	
 	public void readyStart() {
-		player.start();		
+		player.start();
+		player.setDaemon(true);
 //		bot = new Bot();
-				
+		
 		try {
 			player.join();
-//			bot.join();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+			System.out.println("½ÇÇà");
+		} catch (InterruptedException ie) {
+			ie.printStackTrace();
 		}
 	}
 	

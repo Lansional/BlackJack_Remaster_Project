@@ -23,5 +23,3 @@ JDK: JDK1.8
 ```
 
 ## Áøµµ
-
-* > 19/2/10 done [PlayerLogin](https://github.com/Lansional/BlackJack_Remaster_Project/tree/Lansional/src/PlayerLogin/)

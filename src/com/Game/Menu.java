@@ -60,7 +60,7 @@ public class Menu {
 	}
 	
 	public void usaClear() {			// 유사 "Clear" 명령어
-		for (int i = 0; i < 25; i++) {
+		for (int i = 0; i < 30; i++) {
 			System.out.println();
 		}
 	}
