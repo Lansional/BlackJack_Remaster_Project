@@ -24,7 +24,7 @@ public class Register implements Login_and_Register {
 		Socket socket = null;
 		
 		try {
-			socket = new Socket("192.168.0.101", 1720);
+			socket = new Socket(ADDRESS, PORT);
 			
 			DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
 			
@@ -39,6 +39,7 @@ public class Register implements Login_and_Register {
 			outputStream.writeUTF(passWord);
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
+			System.exit(0);
 		}
 	}
 	
