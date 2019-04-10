@@ -2,6 +2,8 @@
 
 ```
 	Java Project
+
+	블랙잭은 여유럽게 하는 개임 프로젝트다
 ```
 
 Welcome to Lansional GitHub page!
@@ -23,3 +25,4 @@ JDK: JDK1.8
 ```
 
 ## 진도
+	아직은 하나도 못 완성했다.

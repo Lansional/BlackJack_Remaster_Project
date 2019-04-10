@@ -17,7 +17,7 @@ public class Register implements Login_and_Register {
 		inputPassWord();
 		inputInformation();
 		System.out.println("Please Login!!");
-		new Login();
+//		new Login();
 	}
 	
 	public void inputInformation() {			// tcp/ip 서버로 비번과 아이디 보내기
