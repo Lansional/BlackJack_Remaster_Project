@@ -1,14 +1,6 @@
 package com.PlayerLogin;
 
-import java.util.Scanner;
-
 public class Start {
-	private Scanner scan = new Scanner(System.in);
-	
-	public Start() {
-		showMenu();
-		Input(scan.nextInt());
-	}
 	
 	public void Input(int t) {
 		usaClear();
@@ -19,8 +11,8 @@ public class Start {
 			new Register();
 			return;
 		} else {
-			System.out.println("Please re-enter! ");
-			this.Input(scan.nextInt());
+			System.out.println("Please Try Again! ");
+			System.exit(0);
 		}
 	}
 	
