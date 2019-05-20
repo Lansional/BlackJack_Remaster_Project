@@ -5,6 +5,14 @@ import java.util.Scanner;
 //import com.Game.MultiPlay.MultiPlayStart;
 import com.Game.SinglePlay.SingleStart;
 
+/**
+ * ê²Œì„ì˜ ë©”ë‰´í™”ë©´
+ * ì„œë²„ìƒì—ì„œ ì„±ê³µí–ˆë‹¤ë©´ menu();í•¨ìˆ˜ê°€ ëœ°ê²ƒì´ë‹¤.
+ * @author jacky
+ * @param Scanner scan; ì…ë ¥
+ * @param SingleStart singleStart; com.Game.SinglePlay.SingleStart
+ */
+
 public class Menu {
 	private Scanner scan;
 	private SingleStart singleStart;
@@ -15,7 +23,7 @@ public class Menu {
 		menu();
 	}
 	
-	public void menu() {			// ¸Ş´º µµÆ® µğÀÚÀÎ
+	public void menu() {			// ì‹œì‘ ë©”ë‰´í™”
 		for (int i = 0; i < 3; i++) {
 			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		}
@@ -46,7 +54,7 @@ public class Menu {
 		choose(scan.nextInt());
 	}
 	
-	public void choose(int i) {			// ¼±ÅÃÇÏ±â
+	public void choose(int i) {			// ìœ ì‚¬ ì½˜ì†”ì°½
 		usaClear();
 		if (i == 1) {
 			singleStart = new SingleStart();
@@ -59,7 +67,7 @@ public class Menu {
 		}
 	}
 	
-	public void usaClear() {			// À¯»ç "Clear" ¸í·É¾î
+	public void usaClear() {			// ìœ ì‚¬ ë¦¬ëˆ…ìŠ¤ì˜ "clear" 
 		for (int i = 0; i < 30; i++) {
 			System.out.println();
 		}

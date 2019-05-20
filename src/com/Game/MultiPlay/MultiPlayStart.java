@@ -11,7 +11,7 @@ public class MultiPlayStart {
 		player = new Player();
 	}
 	
-//	¿¬°á
+// tcp/ip ì—°ê²°ì„¤ì •
 //	public boolean connect() {
 //		
 //	}

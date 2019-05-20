@@ -1,14 +1,22 @@
 package com.Game;
 
-public interface Card {			// »ç¿ëÀÚ¿Í º¿ÀÇ »ó¼Ó ÀÎÅÍÆäÀÌ½º
-	public String[] Card = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };			// Æ÷Ä¿ Ä«µå
+/**
+ * Cardë¼ê³  ì´ë¦„ì„ ì§€ì—ˆì§€ë§Œ
+ * ì‚¬ì‹¤ì€ í”Œë ˆì´ì–´ì™€ AIí´ë˜ì„œ ìƒì†í•˜ëŠ” ì¸í„°í˜ì´ìŠ¤
+ * @author jacky
+ * @param String[] card í¬ì»¤
+ */
+public interface Card {
+	public String[] Card = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
 	
 	public int CARD_LENG = Card.length;
 	
-	public int getSum();			// ¸ğµç Ä«µåÀÇ ÇÕ
-	public void moreOneCard();		// Ä«µå Ãß°¡
-	public int getCardSize();		// Ä«µå ¼ö·®
-	public boolean outSum();		// Ä«µå ¼ıÀÚ ÃÊ°ú È®ÀÎ
-	public void startGetCard();		// ½ÃÀÛ Ä«µå
-	public void setSum();			// ÇÕÀ» ¸Å ÇÑÅÏ¾¿ ÀúÀå (setDaemon())
+	// í•©ì˜ getter && setter
+	public int getSum();
+	public void setSum();
+	
+	public void moreOneCard();		// í•œì¥ë”
+	public int getCardSize();		// ì¹´ë“œ ì‚¬ì´ì¦ˆ í™•ì¸
+	public boolean outSum();		// ì¹´ë“œì˜ í•©ì´ 21ì„ ë„˜ì—ˆë”ë¼ë©´
+	public void startGetCard();		// ì‹œì‘í• ë•Œ ì£¼ëŠ” ì¹´ë“œ
 }

@@ -19,7 +19,7 @@ public class SingleStart {
 		
 		try {
 			player.join();
-			System.out.println("½ÇÇà");
+			System.out.println("== ê²Œìž„ ì¢…ë£Œ ==");
 		} catch (InterruptedException ie) {
 			ie.printStackTrace();
 		}

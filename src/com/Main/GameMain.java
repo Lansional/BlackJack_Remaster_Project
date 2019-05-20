@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.Game.Menu;
 import com.PlayerLogin.Start;
 
-public class GameMain {		// ����
+public class GameMain {		// Main 함수
 
 	public static void main(String[] args) {
 		// start
