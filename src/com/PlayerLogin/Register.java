@@ -20,7 +20,7 @@ public class Register implements Login_and_Register {
 //		new Login();
 	}
 	
-	public void inputInformation() {			// tcp/ip ¼­¹ö·Î ºñ¹ø°ú ¾ÆÀÌµð º¸³»±â
+	public void inputInformation() {			// tcp/ip ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		Socket socket = null;
 		
 		try {
@@ -38,7 +38,7 @@ public class Register implements Login_and_Register {
 			
 			outputStream.writeUTF(passWord);
 		} catch (IOException ioe) {
-			ioe.printStackTrace();
+			System.err.println("ì„œë²„ê°€ ì‹¤í–‰í•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			System.exit(0);
 		}
 	}
@@ -76,7 +76,7 @@ public class Register implements Login_and_Register {
 	@Override
 	public void setUserName(String id) {			// Setter: UserName
 		if (id == null) {
-			System.err.println("ÀÔ·Â°ªÀÌ ¾ø½À´Ï´Ù.");
+			System.err.println("id is not input please retry");
 			new Login();
 			return;
 		}

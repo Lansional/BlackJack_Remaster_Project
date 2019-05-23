@@ -1,9 +1,10 @@
-# Black Jack
+# BlackJack_Remaster_Project
 
 ```
 	Java Project
 
-	ºí·¢ÀèÀº ¿©À¯·´°Ô ÇÏ´Â °³ÀÓ ÇÁ·ÎÁ§Æ®´Ù
+	ì „ì— Cì–¸ì–´ë¡œ ë§Œë“  í”„ë¡œê·¸ëž¨ì„ ë‹¤ì‹œ ìžë°”ë¡œ í•œë²ˆ ì§œë³¸ë‹¤.
+	
 ```
 
 Welcome to Lansional GitHub page!
@@ -11,18 +12,14 @@ Welcome to Lansional GitHub page!
 ide: eclipse <br>
 JDK: JDK1.8
 
-## ½ÇÇà¹æ¹ý
+## ì‹¤í–‰ë°©ë²•
 ``` Bash
 	java com.Main.Main
 ```
 
-## °ð ³ÖÀ» ±â´Éµé
+## ëª©í‘œ
 ```
-	1. ½Ì±ÛÇÃ·¹ÀÌ (ÇÃ·¹ÀÌ¾î¿Í º¿)
-	2. ¸ÖÆ¼ÇÃ·¹ÀÌ ((tcp/ip or UDP) ¼­¹ö, ·Î±×ÀÎ ±â´ÉÀ» ¼­¹ö)
-	3. ¼­¹ö µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á (mysql ¿¹»ó)
-	4. GUI (JavaFx)
+	1. ë§¤ì¼ ì»¤ë°‹(ì–´ë µë‹¤)
+	2. ë¡œê·¸ì¸ í™”ë©´ìœ¼ë¡œëŠ” tcp/ip ì‚¬ìš©
+	3. ë°ì´í„°ë² ì´ìŠ¤ë¡œëŠ” MongoDB ì—°ë™
 ```
-
-## Áøµµ
-	¾ÆÁ÷Àº ÇÏ³ªµµ ¸ø ¿Ï¼ºÇß´Ù.

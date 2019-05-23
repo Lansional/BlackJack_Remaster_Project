@@ -11,7 +11,6 @@ public class GameMain {		// Main 함수
 		// start
 		Start start = new Start();
 		Scanner scan = new Scanner(System.in);
-		
 		start.showMenu();
 		start.Input(scan.nextInt());
 		

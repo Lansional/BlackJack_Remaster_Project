@@ -7,7 +7,7 @@ public class MultiPlayStart {
 	private Card player;
 	
 	public MultiPlayStart() {
-//		connect()
+//		connect();
 		player = new Player();
 	}
 	
