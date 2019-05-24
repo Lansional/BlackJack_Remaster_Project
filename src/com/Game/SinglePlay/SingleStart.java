@@ -2,6 +2,11 @@ package com.Game.SinglePlay;
 
 import com.Game.SinglePlay.Player.Player;
 
+/**
+ * SingleStart 싱글플레이의 시작
+ * @author jacky
+ *
+ */
 public class SingleStart {
 	private Player player;
 //	private Bot bot;

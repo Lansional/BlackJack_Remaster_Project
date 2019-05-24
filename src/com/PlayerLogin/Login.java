@@ -1,18 +1,32 @@
 package com.PlayerLogin;
 
-import java.io.Console;
+import java.io.DataInputStream;
+import java.net.Socket;
 
 public class Login implements Login_and_Register {
-	private String userName;		// À¯ÀúÀÌ¸§ÀÔ·Â
-	private String passWord;		// pW¸¦ StringÀ¸·Î ÀüÈ¯
-	private Console console = System.console();
+	private String userName;		// ì•„ì´ë””
+	private String passWord;		// ë¹„ë°€ë²ˆí˜¸
 	
-	public Login() {
+	public Login() {							// ìƒì„±ìë¡œ ë°”ë¡œ ë¡œê·¸ì¸
 		System.out.print("UserName: ");
 		setUserName(console.readLine());
 		System.out.print("PassWord: ");
 		setPassWord(console.readPassword());
 	}
+	
+//	public boolean getInformationAtServer() {						// ì„œë²„ìª½ìœ¼ì„œ ë°ì´í„° ì–»ê¸°
+//		Socket socket = null;
+//		
+//		try {
+//			socket = new Socket(ADDRESS, PORT);
+//			DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
+//			
+//		}
+//	}
+	
+//	public boolean checkTheUserName(String str) {					// UserName ì²´í¬
+//		
+//	}
 	
 	public boolean ckeckThePassWord(String str) {
 		if (passWord.equals(str)) {
@@ -34,7 +48,7 @@ public class Login implements Login_and_Register {
 	@Override
 	public void setUserName(String str) {
 		if (str == null) {
-			System.err.println("ÀÔ·Â°ªÀÌ ¾ø½À´Ï´Ù.");
+			System.err.println("ì´ë¦„ì´ ì…ë ¥í•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			new Login();
 			return;
 		}
@@ -44,10 +58,22 @@ public class Login implements Login_and_Register {
 	@Override
 	public void setPassWord(char[] passWord) {
 		if (passWord.length == 0) {
-			System.err.println("ÀÔ·Â°ªÀÌ ¾ø½À´Ï´Ù.");			
+			System.err.println("ë¹„ë²ˆì´ ì…ë ¥í•˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
 			new Login();
 			return;
 		}
 		this.passWord = String.valueOf(passWord);
+	}
+
+	@Override
+	public boolean checkPassword(char[] pW) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean information() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

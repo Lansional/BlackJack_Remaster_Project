@@ -6,11 +6,11 @@ import com.Game.Menu;
 import com.PlayerLogin.Start;
 
 public class GameMain {		// Main 함수
+	private final static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		// start
 		Start start = new Start();
-		Scanner scan = new Scanner(System.in);
 		start.showMenu();
 		start.Input(scan.nextInt());
 		
