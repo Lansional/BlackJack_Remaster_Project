@@ -14,12 +14,12 @@ JDK: JDK1.8
 
 ## 실행방법
 ``` Bash
-	java com.Main.Main
+	java com.Main.GameMain
 ```
 
 ## 목표
 ```
 	1. 매일 커밋(어렵다)
-	2. 로그인 화면으로는 tcp/ip 사용
-	3. 데이터베이스로는 MongoDB 연동
+	2. 로그인 서버로는 tcp/ip 사용 후로는 서버를 우선으로 다시 짠다. (UDP 고려하고 있다.)
+	3. 데이터베이스로는 mySql 연동
 ```

@@ -6,8 +6,9 @@ import java.net.Socket;
 import java.util.Arrays;
 
 public class Register implements Login_and_Register {
-	private String id, passWord;
-	private static int soMoreWrong;
+	private final static String SIGNAL = "Register";						// 서버로 Register 신호보낸다
+	private String id, passWord;												// 아이디, 비번	
+	private static int soMoreWrong;												// 만약에 비번이 3번이상 틀렸다면 시스템 종료
 	
 	public Register() {
 		System.out.print("UserName: ");
@@ -32,7 +33,7 @@ public class Register implements Login_and_Register {
 			System.exit(0);
 		}
 		System.out.println("Please Login!!");
-//		new Login();
+		new Login();
 	}
 	
 	@Override
@@ -43,15 +44,8 @@ public class Register implements Login_and_Register {
 			socket = new Socket(ADDRESS, PORT);
 			
 			DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
-			
+			outputStream.writeUTF(SIGNAL);
 			outputStream.writeUTF(id);
-			
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException ie) {
-				ie.printStackTrace();
-			}
-			
 			outputStream.writeUTF(passWord);
 			return true;
 		} catch (IOException ioe) {
