@@ -7,8 +7,6 @@ import java.io.Console;
  * @author jacky
  */
 public interface Login_and_Register {
-	String ADDRESS = "192.168.0.104";					// ADDRESS: 내집 와이파이 주소값 (후로는 사용자보고 입력한다.)
-	int PORT = 8006;										// PORT: 8080임의 값 (후로는 사용자보고 입력한다.)
 	Console console = System.console();				// 자식 클래스가 다 사용할수 있도록
 	
 	void setUserName(String str);						// userName 필드 setter

@@ -12,7 +12,7 @@ import java.util.function.Predicate;
  * 그리고 신호, 입력한 아이디, 비번을 서버쪽으로 보낸다.
  * @author jacky
  */
-public class Register implements Login_and_Register {
+public class Register extends Start implements Login_and_Register {
 	private final static String SIGNAL = "Register";						// 서버로 Register 신호보낸다
 	private String id, passWord;												// 아이디, 비번	
 	private static int soMoreWrong;												// 만약에 비번이 3번이상 틀렸다면 시스템 종료
@@ -47,7 +47,7 @@ public class Register implements Login_and_Register {
 		Socket socket = null;
 		
 		try {
-			socket = new Socket(ADDRESS, PORT);
+			socket = new Socket(super.getAddress(), super.getPort());
 			
 			DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
 			// 신호, 아이디, 비번을 보낸다.
