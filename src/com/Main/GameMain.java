@@ -14,7 +14,7 @@ public class GameMain {		// Main 함수
 		start.showMenu();
 		start.Input(scan.nextInt());
 		
-		// menu
+		// menu				 Start가 끝나면 바로 Menu가 실행한다. (아직 통신은 완성 못함)
 //		new Menu();
 	}
 

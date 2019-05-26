@@ -4,7 +4,14 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.util.Arrays;
+import java.util.function.Predicate;
 
+/**
+ * <계정 만들기>
+ * 비번을 두번 확인한다.
+ * 그리고 신호, 입력한 아이디, 비번을 서버쪽으로 보낸다.
+ * @author jacky
+ */
 public class Register implements Login_and_Register {
 	private final static String SIGNAL = "Register";						// 서버로 Register 신호보낸다
 	private String id, passWord;												// 아이디, 비번	
@@ -21,19 +28,18 @@ public class Register implements Login_and_Register {
 				break;
 			} else {
 				if (soMoreWrong >= 3) {
-					System.out.println("Sorry! Please try again");
+					System.out.println("Sorry! Please start again");
 					System.exit(0);					
 				}
-				System.err.println("Not Same PassWord input!");
+				System.err.println("Not same passWord input, please try again!");
 				soMoreWrong++;
 			}
 		}
 		if (!information()) {
-			System.err.println("서버가 실행하지 않았습니다.");
 			System.exit(0);
 		}
 		System.out.println("Please Login!!");
-		new Login();
+		new Login();							// 계정만들기 성공했다면 로그인 클래스로
 	}
 	
 	@Override
@@ -44,11 +50,13 @@ public class Register implements Login_and_Register {
 			socket = new Socket(ADDRESS, PORT);
 			
 			DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
+			// 신호, 아이디, 비번을 보낸다.
 			outputStream.writeUTF(SIGNAL);
 			outputStream.writeUTF(id);
 			outputStream.writeUTF(passWord);
 			return true;
 		} catch (IOException ioe) {
+			System.out.println(ioe.getMessage());
 			return false;
 		}
 	}
@@ -83,7 +91,7 @@ public class Register implements Login_and_Register {
 	}
 
 	@Override
-	public String getPw() {
+	public String getPw() {									// getter: PassWord
 		return passWord;
 	}
 }

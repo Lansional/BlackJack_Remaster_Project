@@ -6,18 +6,18 @@ import java.util.ListIterator;
 import java.util.Scanner;
 import java.util.function.Function;
 
-import com.Game.Card;
+import com.Game.PlayerInterface;
 
-public class Player extends Thread implements Card {			// �̱��÷���
-	private List<String> playerCard;
-	private static int sum;
-	private Scanner scan = new Scanner(System.in);
+public class Player extends Thread implements PlayerInterface {			// Player
+	private List<String> playerCard;												// 리스트로 사용자가 얻은 카드 저장
+	private static int sum;															// 리스트의 사용자가 얻은 카드의 값의 합을 저장하는 변수
+	private Scanner scan = new Scanner(System.in);								// Scanner (컴퓨터는 필요없음)
 	
 	public Player() {
-		super("Play");
-		playerCard = new ArrayList<String>();
+		super("Play");																	// 쓰레드 그룹의 이름 저장
+		playerCard = new ArrayList<String>();										// 리스트 초기화
 		
-		startGetCard();
+		startGetCard();																	// 시작
 	}
 	
 	@Override

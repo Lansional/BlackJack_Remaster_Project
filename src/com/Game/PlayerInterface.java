@@ -9,10 +9,10 @@ package com.Game;
  * 2019.3.19		jacky
  * *******************************************	
  */
-public interface Card {
-	public String[] Card = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };
+public interface PlayerInterface {
+	public String[] Card = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K" };					// 포커
 	
-	public int CARD_LENG = Card.length;
+	public int CARD_LENG = Card.length;																							// 포커의 카드 수 (13개)
 	
 	// 합의 getter && setter
 	public int getSum();
