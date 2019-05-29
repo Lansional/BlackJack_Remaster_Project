@@ -4,19 +4,9 @@ public class Start {
 	private String ADDRESS;
 	private int PORT;
 	
-	public Start() {	}
-	
 	public Start(String address, int port) {
 		this.ADDRESS = address;
 		this.PORT = port;
-	}
-	
-	public String getAddress() {								// ADDRESS의 getter
-		return ADDRESS;
-	}
-	
-	public int getPort() {										// PORT의 getter
-		return PORT;
 	}
 	
 	public void Input(int t) {
@@ -25,7 +15,7 @@ public class Start {
 			new Login();
 			return;
 		} else if (t == 2) {
-			new Register();
+			new Register(ADDRESS, PORT);
 			return;
 		} else {
 			System.out.println("Please Try Again! ");
