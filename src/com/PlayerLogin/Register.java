@@ -31,6 +31,7 @@ public class Register implements Login_and_Register {
 		System.out.println("Please Login!!");
 		IfPassWordWrongMoreThanThree();
 		if (!information()) {
+			System.out.println(ADDRESS + ":" + PORT);
 			System.exit(0);
 		}
 		new Login();							// 계정만들기 성공했다면 로그인 클래스로
