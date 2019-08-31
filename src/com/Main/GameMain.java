@@ -14,7 +14,7 @@ public class GameMain {		// Main 함수
 		System.out.print("서버의 포트번호를 입력하세요: ");
 		int port = scan.nextInt();
 		
-		System.out.println(address);
+		// System.out.println(address);
 		// start
 		Start start = new Start(address, port);
 		start.showMenu();
